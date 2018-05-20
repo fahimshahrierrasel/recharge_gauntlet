@@ -175,7 +175,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblRoot);
-            this.Name = "PhoneBook";
+            //this.Name = "PhoneBook";
             this.Text = "PhoneBook";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhoneBook)).EndInit();
             this.ResumeLayout(false);
