@@ -114,18 +114,20 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(75, 254);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(61, 266);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(96, 33);
+            this.BtnCancel.Size = new System.Drawing.Size(103, 33);
             this.BtnCancel.TabIndex = 8;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(177, 254);
+            this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegister.Location = new System.Drawing.Point(170, 266);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(96, 33);
+            this.BtnRegister.Size = new System.Drawing.Size(103, 33);
             this.BtnRegister.TabIndex = 9;
             this.BtnRegister.Text = "Register";
             this.BtnRegister.UseVisualStyleBackColor = true;
