@@ -42,6 +42,7 @@
             // 
             // TextboxName
             // 
+            this.TextboxName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.TextboxName.Location = new System.Drawing.Point(39, 55);
             this.TextboxName.Multiline = true;
             this.TextboxName.Name = "TextboxName";
@@ -50,6 +51,7 @@
             // 
             // TextboxUsername
             // 
+            this.TextboxUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxUsername.Location = new System.Drawing.Point(39, 109);
             this.TextboxUsername.Multiline = true;
             this.TextboxUsername.Name = "TextboxUsername";
@@ -58,84 +60,97 @@
             // 
             // TextboxPassword
             // 
+            this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxPassword.Location = new System.Drawing.Point(39, 163);
             this.TextboxPassword.Multiline = true;
             this.TextboxPassword.Name = "TextboxPassword";
+            this.TextboxPassword.PasswordChar = '•';
             this.TextboxPassword.Size = new System.Drawing.Size(234, 31);
             this.TextboxPassword.TabIndex = 2;
             // 
             // TextboxPassConfirm
             // 
+            this.TextboxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxPassConfirm.Location = new System.Drawing.Point(39, 217);
             this.TextboxPassConfirm.Multiline = true;
             this.TextboxPassConfirm.Name = "TextboxPassConfirm";
+            this.TextboxPassConfirm.PasswordChar = '•';
             this.TextboxPassConfirm.Size = new System.Drawing.Size(234, 31);
             this.TextboxPassConfirm.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Segoe UI Light", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(36, 35);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.Size = new System.Drawing.Size(49, 19);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "User Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(36, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(71, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(36, 197);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 17);
+            this.label4.Size = new System.Drawing.Size(131, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Confirm Password";
             // 
             // BtnCancel
             // 
+            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.BtnCancel.FlatAppearance.BorderSize = 0;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(61, 266);
+            this.BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.BtnCancel.Location = new System.Drawing.Point(39, 266);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(103, 33);
+            this.BtnCancel.Size = new System.Drawing.Size(118, 41);
             this.BtnCancel.TabIndex = 8;
             this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.UseVisualStyleBackColor = false;
             // 
             // BtnRegister
             // 
+            this.BtnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.BtnRegister.FlatAppearance.BorderSize = 0;
+            this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegister.Location = new System.Drawing.Point(170, 266);
+            this.BtnRegister.ForeColor = System.Drawing.Color.White;
+            this.BtnRegister.Location = new System.Drawing.Point(163, 266);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(103, 33);
+            this.BtnRegister.Size = new System.Drawing.Size(110, 41);
             this.BtnRegister.TabIndex = 9;
             this.BtnRegister.Text = "Register";
-            this.BtnRegister.UseVisualStyleBackColor = true;
+            this.BtnRegister.UseVisualStyleBackColor = false;
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(313, 334);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.BtnCancel);
