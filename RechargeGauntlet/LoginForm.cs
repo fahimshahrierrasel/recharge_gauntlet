@@ -26,5 +26,10 @@ namespace RechargeGauntlet
         {
 
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
