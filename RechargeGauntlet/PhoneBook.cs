@@ -81,7 +81,7 @@ namespace RechargeGauntlet
                 e.Handled = true;
             }
 
-            if (txtNumber.SelectionStart > 10)
+            if (txtNumber.SelectionStart > 10 && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
