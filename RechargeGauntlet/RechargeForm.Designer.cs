@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RechargeForm));
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblMultiply = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -42,9 +41,9 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.PBOperatorLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.operatorControl1 = new RechargeGauntlet.CustomControls.OperatorControl();
-            this.operatorControl2 = new RechargeGauntlet.CustomControls.OperatorControl();
             this.operatorControl3 = new RechargeGauntlet.CustomControls.OperatorControl();
+            this.operatorControl2 = new RechargeGauntlet.CustomControls.OperatorControl();
+            this.operatorControl1 = new RechargeGauntlet.CustomControls.OperatorControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,9 +56,10 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(287, 61);
             this.txtNumber.TabIndex = 0;
-            this.txtNumber.Text = "017XXXXXXXX";
+            this.txtNumber.Text = "01XXXXXXXXX";
             this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtNumber.Enter += new System.EventHandler(this.txtNumberFocus);
+            this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
+            this.txtNumber.Enter += new System.EventHandler(this.txtNumber_Enter);
             this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             this.txtNumber.Leave += new System.EventHandler(this.txtNumber_Leave);
             // 
@@ -73,7 +73,7 @@
             this.lblMultiply.Location = new System.Drawing.Point(92, 89);
             this.lblMultiply.Name = "lblMultiply";
             this.lblMultiply.Size = new System.Drawing.Size(31, 32);
-            this.lblMultiply.TabIndex = 1;
+            this.lblMultiply.TabIndex = 100;
             this.lblMultiply.Text = "X";
             this.lblMultiply.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -83,8 +83,8 @@
             this.txtAmount.Location = new System.Drawing.Point(120, 75);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(179, 61);
-            this.txtAmount.TabIndex = 3;
-            this.txtAmount.Text = "10000.00";
+            this.txtAmount.TabIndex = 2;
+            this.txtAmount.Text = "100.00";
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAmount.Enter += new System.EventHandler(this.txtAmount_Enter);
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
@@ -101,7 +101,7 @@
             this.rdbPrepaid.Size = new System.Drawing.Size(126, 41);
             this.rdbPrepaid.TabIndex = 4;
             this.rdbPrepaid.TabStop = true;
-            this.rdbPrepaid.Text = "Prepaid";
+            this.rdbPrepaid.Text = "P&repaid";
             this.rdbPrepaid.UseVisualStyleBackColor = true;
             // 
             // btnSend
@@ -115,7 +115,7 @@
             this.btnSend.Location = new System.Drawing.Point(12, 189);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(290, 60);
-            this.btnSend.TabIndex = 6;
+            this.btnSend.TabIndex = 3;
             this.btnSend.Text = "&Send";
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -131,8 +131,8 @@
             this.btnPhoneBook.Location = new System.Drawing.Point(12, 255);
             this.btnPhoneBook.Name = "btnPhoneBook";
             this.btnPhoneBook.Size = new System.Drawing.Size(290, 60);
-            this.btnPhoneBook.TabIndex = 7;
-            this.btnPhoneBook.Text = "Phone Book";
+            this.btnPhoneBook.TabIndex = 4;
+            this.btnPhoneBook.Text = "Phone &Book";
             this.btnPhoneBook.UseVisualStyleBackColor = false;
             // 
             // btnReport
@@ -145,8 +145,8 @@
             this.btnReport.Location = new System.Drawing.Point(12, 321);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(290, 60);
-            this.btnReport.TabIndex = 8;
-            this.btnReport.Text = "Report";
+            this.btnReport.TabIndex = 5;
+            this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = false;
             // 
             // txtSummery
@@ -181,7 +181,7 @@
             this.rdbPostpaid.Size = new System.Drawing.Size(138, 41);
             this.rdbPostpaid.TabIndex = 14;
             this.rdbPostpaid.TabStop = true;
-            this.rdbPostpaid.Text = "Postpaid";
+            this.rdbPostpaid.Text = "P&ostpaid";
             this.rdbPostpaid.UseVisualStyleBackColor = false;
             // 
             // txtQuantity
@@ -190,14 +190,15 @@
             this.txtQuantity.Location = new System.Drawing.Point(12, 75);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(80, 61);
-            this.txtQuantity.TabIndex = 16;
+            this.txtQuantity.TabIndex = 1;
             this.txtQuantity.Text = "1";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
+            this.txtQuantity.Leave += new System.EventHandler(this.txtQuantity_Leave);
             // 
             // PBOperatorLogo
             // 
             this.PBOperatorLogo.BackColor = System.Drawing.Color.Transparent;
-            this.PBOperatorLogo.Image = ((System.Drawing.Image)(resources.GetObject("PBOperatorLogo.Image")));
             this.PBOperatorLogo.InitialImage = null;
             this.PBOperatorLogo.Location = new System.Drawing.Point(305, 11);
             this.PBOperatorLogo.Name = "PBOperatorLogo";
@@ -220,13 +221,13 @@
             this.panel1.Size = new System.Drawing.Size(929, 147);
             this.panel1.TabIndex = 17;
             // 
-            // operatorControl1
+            // operatorControl3
             // 
-            this.operatorControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.operatorControl1.Location = new System.Drawing.Point(4, 4);
-            this.operatorControl1.Name = "operatorControl1";
-            this.operatorControl1.Size = new System.Drawing.Size(303, 126);
-            this.operatorControl1.TabIndex = 0;
+            this.operatorControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operatorControl3.Location = new System.Drawing.Point(622, 4);
+            this.operatorControl3.Name = "operatorControl3";
+            this.operatorControl3.Size = new System.Drawing.Size(303, 126);
+            this.operatorControl3.TabIndex = 2;
             // 
             // operatorControl2
             // 
@@ -236,13 +237,13 @@
             this.operatorControl2.Size = new System.Drawing.Size(303, 126);
             this.operatorControl2.TabIndex = 1;
             // 
-            // operatorControl3
+            // operatorControl1
             // 
-            this.operatorControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.operatorControl3.Location = new System.Drawing.Point(622, 4);
-            this.operatorControl3.Name = "operatorControl3";
-            this.operatorControl3.Size = new System.Drawing.Size(303, 126);
-            this.operatorControl3.TabIndex = 2;
+            this.operatorControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operatorControl1.Location = new System.Drawing.Point(4, 4);
+            this.operatorControl1.Name = "operatorControl1";
+            this.operatorControl1.Size = new System.Drawing.Size(303, 126);
+            this.operatorControl1.TabIndex = 0;
             // 
             // RechargeForm
             // 
@@ -265,7 +266,7 @@
             this.Controls.Add(this.txtNumber);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "RechargeForm";
-            this.Text = "Recharge Form";
+            this.Text = "Recharge";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RechargeGauntlet
@@ -60,14 +53,6 @@ namespace RechargeGauntlet
             }
         }
 
-        private void txtNumberFocus(object sender, EventArgs e)
-        {
-            if (txtNumber.Text == "017XXXXXXXX")
-            {
-                txtNumber.Text = "";
-            }
-        }
-
         private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -79,6 +64,7 @@ namespace RechargeGauntlet
             {
                 e.Handled = true;
             }
+
             if (e.KeyChar > '0' && e.KeyChar < '2' && txtNumber.SelectionStart < 1)
             {
                 e.Handled = true;
@@ -90,19 +76,44 @@ namespace RechargeGauntlet
             }
         }
 
+        private void SetOperatorLogo(string operatorCode)
+        {
+            switch (operatorCode)
+            {
+                case "015":
+                    PBOperatorLogo.Image = Properties.Resources.teletalk;
+                    break;
+                case "016":
+                    PBOperatorLogo.Image = Properties.Resources.airtel;
+                    break;
+                case "017":
+                    PBOperatorLogo.Image = Properties.Resources.gp;
+                    break;
+                case "018":
+                    PBOperatorLogo.Image = Properties.Resources.robi;
+                    break;
+                case "019":
+                    PBOperatorLogo.Image = Properties.Resources.banglalink;
+                    break; 
+                default:
+                    PBOperatorLogo.Image = null;
+                    break;
+            }
+        }
+
+        private void txtNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtNumber.Text == "01XXXXXXXXX")
+            {
+                txtNumber.Text = "";
+            }
+        }
+
         private void txtNumber_Leave(object sender, EventArgs e)
         {
             if (txtNumber.Text == "")
             {
-                txtNumber.Text = "017XXXXXXXX";
-            }
-        }
-
-        private void txtQuantity_Enter(object sender, EventArgs e)
-        {
-            if (txtNumber.Text == "1")
-            {
-                txtNumber.Text = "";
+                txtNumber.Text = "01XXXXXXXXX";
             }
         }
 
@@ -130,15 +141,6 @@ namespace RechargeGauntlet
             }
         }
 
-        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
-
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -156,5 +158,39 @@ namespace RechargeGauntlet
                 e.Handled = true;
             }
         }
+
+        private void txtNumber_TextChanged(object sender, EventArgs e)
+        {
+            TextBox phoneNumber = (TextBox)sender;
+            if (phoneNumber.Text.Length == 3)
+            {
+                string operatorCode = phoneNumber.Text.Substring(0, 3);
+                SetOperatorLogo(operatorCode);
+            }
+            else if (phoneNumber.Text.Length < 3)
+            {
+                SetOperatorLogo("None");
+            }
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.' && txtAmount.SelectionStart < 2)
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+
     }
 }
