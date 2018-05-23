@@ -68,11 +68,6 @@ namespace RechargeGauntlet
             }
         }
 
-        private void RechargeForm_Load(object sender, EventArgs e)
-        {
-            this.ActiveControl = lblSummery;
-        }
-
         private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
