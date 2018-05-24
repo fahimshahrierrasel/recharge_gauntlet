@@ -76,6 +76,10 @@ namespace RechargeGauntlet
             }
         }
 
+        /// <summary>
+        /// Set operator logo based on the mobile number
+        /// </summary>
+        /// <param name="operatorCode">Mobile Number for setting the operator logo</param>
         private void SetOperatorLogo(string operatorCode)
         {
             switch (operatorCode)
@@ -159,6 +163,7 @@ namespace RechargeGauntlet
             }
         }
 
+        // Check Number when they are get matched with the operator number
         private void txtNumber_TextChanged(object sender, EventArgs e)
         {
             TextBox phoneNumber = (TextBox)sender;
@@ -173,6 +178,7 @@ namespace RechargeGauntlet
             }
         }
 
+        // Input only Integers (no numbers and decimal number)
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -184,13 +190,6 @@ namespace RechargeGauntlet
             {
                 e.Handled = true;
             }
-            // only allow one decimal point
-            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            //{
-            //    e.Handled = true;
-            //}
         }
-
-
     }
 }
