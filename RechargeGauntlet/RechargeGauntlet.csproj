@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,9 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modem\ModemPortAllocation.cs" />
+    <Compile Include="Modem\OperatorModemPort.cs" />
+    <Compile Include="Modem\SerialModem.cs" />
     <Compile Include="PhoneBook.cs">
       <SubType>Form</SubType>
     </Compile>
