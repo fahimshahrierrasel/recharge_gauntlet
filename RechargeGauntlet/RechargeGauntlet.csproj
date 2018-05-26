@@ -125,9 +125,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bar4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -144,18 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\teletalk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bar0.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sigbar0.png" />
