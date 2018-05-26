@@ -13,43 +13,24 @@ namespace RechargeGauntlet
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            var numberReg = new Regex("^[0-9.]*$");
-            if (String.IsNullOrWhiteSpace(txtAmount.Text) || String.IsNullOrWhiteSpace(txtNumber.Text) || String.IsNullOrWhiteSpace(txtQuantity.Text)|| (rdbPrepaid.Checked==false && rdbPostpaid.Checked==false ) || (!numberReg.IsMatch(txtNumber.Text)) || (!numberReg.IsMatch(txtQuantity.Text))||
-                (!numberReg.IsMatch(txtAmount.Text)))
-            {
-                if(rdbPrepaid.Checked == false && rdbPostpaid.Checked == false)
-                {
-                    MessageBox.Show("Please Select Either Prepaid or postpaid");
-                }
+            var numberReg = new Regex("^01[5-9][0-9]{8}"); // Regex for mobile number start with 01 and one digit from 5-9 other 8 digits
+            var amountReg = new Regex("(^[1-9][0-9]+.?[0-9]{0,2})"); // support both decimal and non decimal number upto 2 decimal point
+            var quantityReg = new Regex("^[1-9][0-9]*");
 
-                if (String.IsNullOrWhiteSpace(txtAmount.Text))
-                {
-                    MessageBox.Show("Please Enter an amount!");
-                }
-                if (String.IsNullOrWhiteSpace(txtQuantity.Text ))
-                {
-                    MessageBox.Show("Please Enter an quantity!");
-                }
-                if (String.IsNullOrWhiteSpace(txtNumber.Text))
-                {
-                    MessageBox.Show("Please Enter an number!");
-                }
-                if (!numberReg.IsMatch(txtAmount.Text))
-                {
-                    MessageBox.Show("Please Enter an valid amount!");
-                }
-                if (!numberReg.IsMatch(txtQuantity.Text))
-                {
-                    MessageBox.Show("Please Enter an valid quantity!");
-                }
-                if (!numberReg.IsMatch(txtNumber.Text))
-                {
-                    MessageBox.Show("Please Enter an valid Mobile Number!");
-                }
-            }
-            else
+            if (!amountReg.IsMatch(txtAmount.Text))
             {
-                MessageBox.Show("Okay");
+                MessageBox.Show("Please Enter an valid amount!");
+                return;
+            }
+            if (!quantityReg.IsMatch(txtQuantity.Text))
+            {
+                MessageBox.Show("Please Enter an valid quantity!");
+                return;
+            }
+            if (!numberReg.IsMatch(txtNumber.Text))
+            {
+                MessageBox.Show("Please Enter an valid Mobile Number!");
+                return;
             }
         }
 
@@ -98,7 +79,7 @@ namespace RechargeGauntlet
                     break;
                 case "019":
                     PBOperatorLogo.Image = Properties.Resources.banglalink;
-                    break; 
+                    break;
                 default:
                     PBOperatorLogo.Image = null;
                     break;
