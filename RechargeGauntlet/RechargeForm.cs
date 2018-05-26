@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using RechargeGauntlet.CustomControls;
+using RechargeGauntlet.Modem;
 
 namespace RechargeGauntlet
 {
     public partial class RechargeForm : Form
     {
+        private List<OperatorModemPort> _operatorModemPorts;
+
         public RechargeForm()
         {
             InitializeComponent();
+            InitializeModems();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -31,6 +37,26 @@ namespace RechargeGauntlet
             {
                 MessageBox.Show("Please Enter an valid Mobile Number!");
                 return;
+            }
+        }
+
+        private void InitializeModems()
+        {
+            _operatorModemPorts = new List<OperatorModemPort>();
+            _operatorModemPorts.Clear();
+            _operatorModemPorts.AddRange(ModemPortAllocation.GetOperatorModemPorts());
+            int width = 0;
+            foreach (var operatorModemPort in _operatorModemPorts)
+            {
+                Console.WriteLine($@"{operatorModemPort.ComPort} -- {operatorModemPort.OperatorName}");
+                var operatorControl = new OperatorControl(operatorModemPort.ComPort, operatorModemPort.OperatorName)
+                {
+                    Visible = true,
+                    Top = 0,
+                    Left = 0+width,
+                };
+                width = operatorControl.Width + 5;
+                PanelModemConnection.Controls.Add(operatorControl);
             }
         }
 

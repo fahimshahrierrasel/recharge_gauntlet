@@ -22,11 +22,11 @@ namespace RechargeGauntlet.CustomControls
         {
             _portNumber = portNumber;
             _operatorName = operatorName;
+            InitializeComponent();
         }
 
-        public OperatorControl()
+        private void OperatorControl_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
             InitializeModemSerialPort(_portNumber);
             QueryForNetworkStrength();
             SetOperatorLogo(_operatorName);
@@ -44,6 +44,7 @@ namespace RechargeGauntlet.CustomControls
                 Handshake = Handshake.RequestToSend
             };
             _serialPort.DataReceived += ModemDataReceived;
+            _serialPort.Open();
         }
 
         private void ModemDataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -99,19 +100,19 @@ namespace RechargeGauntlet.CustomControls
             {
                 PictureSignalBar.Image = Properties.Resources.sigbar0;
             }
-            else if (networkStrength <= 110 && networkStrength > 95)
+            else if (networkStrength > 95 && networkStrength <= 110)
             {
                 PictureSignalBar.Image = Properties.Resources.sigbar1;
             }
-            else if (networkStrength <= 95 && networkStrength > 85)
+            else if (networkStrength > 85 && networkStrength <= 95)
             {
                 PictureSignalBar.Image = Properties.Resources.sigbar2;
             }
-            else if (networkStrength <= 85 && networkStrength > 70)
+            else if (networkStrength > 70 && networkStrength <= 85)
             {
                 PictureSignalBar.Image = Properties.Resources.sigbar3;
             }
-            else if (networkStrength <= 70 && networkStrength > 60)
+            else if (networkStrength > 40 && networkStrength <= 70)
             {
                 PictureSignalBar.Image = Properties.Resources.sigbar4;
             }
@@ -156,6 +157,7 @@ namespace RechargeGauntlet.CustomControls
                 Console.WriteLine(e);
             }
         }
+
 
     }
 }

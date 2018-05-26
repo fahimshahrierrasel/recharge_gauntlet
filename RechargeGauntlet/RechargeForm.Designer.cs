@@ -40,7 +40,7 @@
             this.rdbPostpaid = new System.Windows.Forms.RadioButton();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.PBOperatorLogo = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelModemConnection = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).BeginInit();
             this.SuspendLayout();
@@ -203,16 +203,16 @@
             this.PBOperatorLogo.TabIndex = 15;
             this.PBOperatorLogo.TabStop = false;
             // 
-            // panel1
+            // PanelModemConnection
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PanelModemConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(12, 396);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(929, 147);
-            this.panel1.TabIndex = 17;
+            this.PanelModemConnection.AutoScroll = true;
+            this.PanelModemConnection.Location = new System.Drawing.Point(12, 396);
+            this.PanelModemConnection.Name = "PanelModemConnection";
+            this.PanelModemConnection.Size = new System.Drawing.Size(929, 147);
+            this.PanelModemConnection.TabIndex = 17;
             // 
             // RechargeForm
             // 
@@ -220,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(953, 546);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelModemConnection);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.PBOperatorLogo);
             this.Controls.Add(this.rdbPostpaid);
@@ -257,6 +257,6 @@
         private System.Windows.Forms.RadioButton rdbPostpaid;
         private System.Windows.Forms.PictureBox PBOperatorLogo;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelModemConnection;
     }
 }
