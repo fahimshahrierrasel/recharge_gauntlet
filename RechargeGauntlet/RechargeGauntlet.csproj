@@ -67,11 +67,11 @@
     <Compile Include="Modem\ModemPortAllocation.cs" />
     <Compile Include="Modem\OperatorModemPort.cs" />
     <Compile Include="Modem\SerialModem.cs" />
-    <Compile Include="PhoneBook.cs">
+    <Compile Include="PhoneBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhoneBook.Designer.cs">
-      <DependentUpon>PhoneBook.cs</DependentUpon>
+    <Compile Include="PhoneBookForm.Designer.cs">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhoneBook.resx">
-      <DependentUpon>PhoneBook.cs</DependentUpon>
+    <EmbeddedResource Include="PhoneBookForm.resx">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

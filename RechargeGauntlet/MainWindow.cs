@@ -18,7 +18,7 @@ namespace RechargeGauntlet
 
         private void phoneBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PhoneBook phoneBook = new PhoneBook();
+            PhoneBookForm phoneBook = new PhoneBookForm();
             phoneBook.Show();
         }
     }
