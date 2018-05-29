@@ -42,7 +42,7 @@
             // 
             // TextboxName
             // 
-            this.TextboxName.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.TextboxName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxName.Location = new System.Drawing.Point(39, 55);
             this.TextboxName.Multiline = true;
             this.TextboxName.Name = "TextboxName";
@@ -51,7 +51,7 @@
             // 
             // TextboxUsername
             // 
-            this.TextboxUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxUsername.Location = new System.Drawing.Point(39, 109);
             this.TextboxUsername.Multiline = true;
             this.TextboxUsername.Name = "TextboxUsername";
@@ -60,7 +60,7 @@
             // 
             // TextboxPassword
             // 
-            this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxPassword.Location = new System.Drawing.Point(39, 163);
             this.TextboxPassword.Multiline = true;
             this.TextboxPassword.Name = "TextboxPassword";
@@ -70,7 +70,7 @@
             // 
             // TextboxPassConfirm
             // 
-            this.TextboxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxPassConfirm.Location = new System.Drawing.Point(39, 217);
             this.TextboxPassConfirm.Multiline = true;
             this.TextboxPassConfirm.Name = "TextboxPassConfirm";
@@ -145,6 +145,7 @@
             this.BtnRegister.TabIndex = 9;
             this.BtnRegister.Text = "Register";
             this.BtnRegister.UseVisualStyleBackColor = false;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // RegistrationForm
             // 

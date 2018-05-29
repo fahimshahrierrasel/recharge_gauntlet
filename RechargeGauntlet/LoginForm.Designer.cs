@@ -38,7 +38,7 @@
             // 
             // TextboxUserName
             // 
-            this.TextboxUserName.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxUserName.Location = new System.Drawing.Point(39, 81);
             this.TextboxUserName.Multiline = true;
             this.TextboxUserName.Name = "TextboxUserName";
@@ -48,7 +48,7 @@
             // 
             // TextboxPassword
             // 
-            this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxPassword.Location = new System.Drawing.Point(39, 144);
             this.TextboxPassword.Multiline = true;
             this.TextboxPassword.Name = "TextboxPassword";

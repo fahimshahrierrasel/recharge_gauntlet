@@ -164,5 +164,8 @@
   <ItemGroup>
     <None Include="Resources\sigbar5.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
