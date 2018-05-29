@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
+using System.Linq;
 using System.Management;
 
 namespace RechargeGauntlet.Modem
@@ -13,16 +15,16 @@ namespace RechargeGauntlet.Modem
         /// <returns>List of all modem port name</returns>
         public static List<string> GetAllModemPorts()
         {
-            List<string> ports = new List<string>();
-            ports.AddRange(GetPOTSModem());
-            return ports;
+            List<string> pOTSModems = _GetPOTSModem();
+            List<string> allComPorts = _GetAllCOMPorts();
+            return allComPorts.Union(pOTSModems).ToList();
         }
 
         /// <summary>
         /// Get all the ports name of the Connected POTS Modem 
         /// </summary>
         /// <returns></returns>
-        private static List<string> GetPOTSModem()
+        private static List<string> _GetPOTSModem()
         {
             List<string> portsList = new List<string>();
 
@@ -45,6 +47,18 @@ namespace RechargeGauntlet.Modem
             }
 
             return portsList;
+        }
+
+        private static List<string> _GetAllCOMPorts()
+        {
+            List<string> portList = new List<string>();
+            String[] allPorts = SerialPort.GetPortNames();
+
+            foreach (string port in allPorts)
+            {
+                portList.Add(port);
+            }
+            return allPorts;
         }
     }
 }
