@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RechargeGauntlet
 {
-    public partial class PhoneBook : Form
+    public partial class PhoneBookForm : Form
     {
-        public PhoneBook()
+        public PhoneBookForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace RechargeGauntlet
 {
-    partial class PhoneBook
+    partial class PhoneBookForm
     {
         /// <summary>
         /// Required designer variable.
