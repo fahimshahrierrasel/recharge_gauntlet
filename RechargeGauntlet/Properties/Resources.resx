@@ -127,6 +127,26 @@
   <data name="gp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MNAirtel" xml:space="preserve">
+    <value>*121*7*3#</value>
+    <comment>Check Airtel Mobile Number</comment>
+  </data>
+  <data name="MNBanglalink" xml:space="preserve">
+    <value>*511#</value>
+    <comment>Check Banglalink Mobile Number</comment>
+  </data>
+  <data name="MNGrameenphone" xml:space="preserve">
+    <value>*2#</value>
+    <comment>Check Grameenphone Mobile Number</comment>
+  </data>
+  <data name="MNRobi" xml:space="preserve">
+    <value>*140*2*4#</value>
+    <comment>Check Robi Mobile Number</comment>
+  </data>
+  <data name="MNTeletalk" xml:space="preserve">
+    <value>*551#</value>
+    <comment>Check Teletalk Mobile Number</comment>
+  </data>
   <data name="robi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\robi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
