@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATCMD\USSDCMD.cs" />
     <Compile Include="CustomControls\OperatorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,7 +72,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Modem\ModemPortAllocation.cs" />
-    <Compile Include="Modem\OperatorModemPort.cs" />
+    <Compile Include="Modem\OperatorModem.cs" />
     <Compile Include="Modem\SerialModem.cs" />
     <Compile Include="PhoneBook.cs">
       <SubType>Form</SubType>
@@ -173,5 +174,6 @@
   <ItemGroup>
     <None Include="Resources\sigbar5.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
