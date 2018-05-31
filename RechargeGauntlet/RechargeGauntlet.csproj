@@ -52,6 +52,12 @@
     <Compile Include="CustomControls\OperatorControl.Designer.cs">
       <DependentUpon>OperatorControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomUI\ModemLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomUI\ModemLoading.Designer.cs">
+      <DependentUpon>ModemLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="CustomControls\OperatorControl.resx">
       <DependentUpon>OperatorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUI\ModemLoading.resx">
+      <DependentUpon>ModemLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
