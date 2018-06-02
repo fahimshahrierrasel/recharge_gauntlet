@@ -61,21 +61,21 @@ namespace RechargeGauntlet
             {
                 //Creating a local instance of Database context class
                 using (RechargeGauntletDataContext _context = new RechargeGauntletDataContext())
-                {                    
+                {
+                    //Fetching the particular record of the given username
+                    var user = (from u in _context.Users
+                        where u.Username == TextboxUserName.Text
+                        select u).FirstOrDefault();
+
                     //Checking if the given username exists in the database
-                    if(_context.Users.Count(u => u.Username == TextboxUserName.Text)!=1)
+                    if (user==null)
                     {
                         MessageBox.Show("Username doesn't exist!");
                     }
 
                     //Given Username exists in the database
                     else
-                    {
-                        //Fetching the particular record of the given username
-                        var user = (from u in _context.Users
-                            where u.Username == TextboxUserName.Text
-                            select u).First();
-
+                    {                        
                         //creating a hashed password's string instance.
                         string hashedPassword = user.PasswordHash;
 
