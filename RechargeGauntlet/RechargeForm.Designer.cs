@@ -236,6 +236,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "RechargeForm";
             this.Text = "Recharge";
+            this.Shown += new System.EventHandler(this.RechargeForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).EndInit();
             this.ResumeLayout(false);

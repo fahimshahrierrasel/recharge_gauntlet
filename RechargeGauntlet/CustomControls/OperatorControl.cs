@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RechargeGauntlet.CustomControls
@@ -15,13 +8,15 @@ namespace RechargeGauntlet.CustomControls
     public partial class OperatorControl : UserControl
     {
         private SerialPort _serialPort;
-        private string _portNumber;
-        private string _operatorName;
+        private readonly string _portNumber;
+        private readonly string _operatorName;
+        private readonly string _mobileNumber;
 
-        public OperatorControl(string portNumber, string operatorName)
+        public OperatorControl(string portNumber, string operatorName, string mobileNumber)
         {
             _portNumber = portNumber;
             _operatorName = operatorName;
+            _mobileNumber = mobileNumber;
             InitializeComponent();
         }
 
@@ -30,6 +25,7 @@ namespace RechargeGauntlet.CustomControls
             InitializeModemSerialPort(_portNumber);
             QueryForNetworkStrength();
             SetOperatorLogo(_operatorName);
+            LabelMobileNumber.Text = _mobileNumber;
         }
 
         private void InitializeModemSerialPort(string port)
@@ -157,7 +153,5 @@ namespace RechargeGauntlet.CustomControls
                 Console.WriteLine(e);
             }
         }
-
-
     }
 }

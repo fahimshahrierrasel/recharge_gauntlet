@@ -142,7 +142,7 @@ namespace RechargeGauntlet.CustomUI
             else
             {
                 Hide();
-                var rechargeForm = new RechargeForm();
+                var rechargeForm = new RechargeForm(_operatorModemInfos);
                 rechargeForm.Closed += (s, args) => this.Close();
                 rechargeForm.Show();
             }

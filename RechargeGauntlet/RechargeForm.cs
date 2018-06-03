@@ -9,11 +9,17 @@ namespace RechargeGauntlet
 {
     public partial class RechargeForm : Form
     {
-        private List<OperatorModemPort> _operatorModemPorts;
+        private List<OperatorModemInfo> _operatorModemInfos;
 
-        public RechargeForm()
+        public RechargeForm(List<OperatorModemInfo> operatorModemInfos)
         {
             InitializeComponent();
+            _operatorModemInfos = operatorModemInfos;
+            
+        }
+
+        private void RechargeForm_Shown(object sender, EventArgs e)
+        {
             InitializeModems();
         }
 
@@ -42,14 +48,11 @@ namespace RechargeGauntlet
 
         private void InitializeModems()
         {
-            _operatorModemPorts = new List<OperatorModemPort>();
-            _operatorModemPorts.Clear();
-            _operatorModemPorts.AddRange(ModemPortAllocation.GetOperatorModemPorts());
             int width = 0;
-            foreach (var operatorModemPort in _operatorModemPorts)
+            foreach (var operatorModemPort in _operatorModemInfos)
             {
-                Console.WriteLine($@"{operatorModemPort.ComPort} -- {operatorModemPort.OperatorName}");
-                var operatorControl = new OperatorControl(operatorModemPort.ComPort, operatorModemPort.OperatorName)
+                Console.WriteLine($@"{operatorModemPort.ComPort} -- {operatorModemPort.OperatorName} -- {operatorModemPort.MobileNumber}");
+                var operatorControl = new OperatorControl(operatorModemPort.ComPort, operatorModemPort.OperatorName, operatorModemPort.MobileNumber)
                 {
                     Visible = true,
                     Top = 0,
@@ -198,5 +201,7 @@ namespace RechargeGauntlet
                 e.Handled = true;
             }
         }
+
+        
     }
 }
