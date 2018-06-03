@@ -16,7 +16,7 @@ namespace RechargeGauntlet
 //            RechargeForm rechargeForm = new RechargeForm();
 //            rechargeForm.Show();
             ModemLoading modemLoding = new ModemLoading();
-            modemLoding.ShowDialog();
+            modemLoding.Show();
         }
 
         private void phoneBookToolStripMenuItem_Click(object sender, EventArgs e)

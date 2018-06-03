@@ -30,7 +30,8 @@
         {
             this.MSProgressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ProgressText = new System.Windows.Forms.Label();
+            this.ModemBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // MSProgressBar
@@ -54,21 +55,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Searching...";
             // 
-            // label2
+            // ProgressText
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(376, 46);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Initialize Search";
+            this.ProgressText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgressText.Location = new System.Drawing.Point(12, 30);
+            this.ProgressText.Name = "ProgressText";
+            this.ProgressText.Size = new System.Drawing.Size(376, 46);
+            this.ProgressText.TabIndex = 2;
+            this.ProgressText.Text = "Initialize Search";
+            // 
+            // ModemBackgroundWorker
+            // 
+            this.ModemBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.ModemBackgroundWorker_DoWork);
+            this.ModemBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.ModemBackgroundWorker_RunWorkerCompleted);
             // 
             // ModemLoading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 121);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ProgressText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MSProgressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -76,6 +82,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Searching Modem";
             this.Load += new System.EventHandler(this.ModemLoading_Load);
+            this.Shown += new System.EventHandler(this.ModemLoading_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,6 +92,7 @@
 
         private System.Windows.Forms.ProgressBar MSProgressBar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ProgressText;
+        private System.ComponentModel.BackgroundWorker ModemBackgroundWorker;
     }
 }

@@ -29,9 +29,9 @@ namespace RechargeGauntlet.Modem
                     Handshake = Handshake.RequestToSend
                 };
                 serialPort.DataReceived += PortOnReceivedData;
-                serialPort.Open();
                 try
                 {
+                    serialPort.Open();
                     serialPort.BaseStream.Flush();
                     serialPort.Write("AT+COPS?\r");
                     serialPort.BaseStream.Flush();
