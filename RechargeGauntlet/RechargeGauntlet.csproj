@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,11 +75,11 @@
     <Compile Include="Modem\ModemPortAllocation.cs" />
     <Compile Include="Modem\OperatorModem.cs" />
     <Compile Include="Modem\SerialModem.cs" />
-    <Compile Include="PhoneBook.cs">
+    <Compile Include="PhoneBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhoneBook.Designer.cs">
-      <DependentUpon>PhoneBook.cs</DependentUpon>
+    <Compile Include="PhoneBookForm.Designer.cs">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,12 +94,18 @@
     <Compile Include="RechargeForm.Designer.cs">
       <DependentUpon>RechargeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RechargeGauntlet.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RechargeGauntlet.dbml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\PasswordHasher.cs" />
     <EmbeddedResource Include="CustomControls\OperatorControl.resx">
       <DependentUpon>OperatorControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,8 +118,8 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhoneBook.resx">
-      <DependentUpon>PhoneBook.cs</DependentUpon>
+    <EmbeddedResource Include="PhoneBookForm.resx">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,9 +143,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="RechargeGauntlet.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RechargeGauntlet.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RechargeGauntlet.dbml.layout">
+      <DependentUpon>RechargeGauntlet.dbml</DependentUpon>
+    </None>
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -175,5 +192,8 @@
     <None Include="Resources\sigbar5.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

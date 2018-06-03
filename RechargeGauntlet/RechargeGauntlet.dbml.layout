@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="RechargeGauntlet">
+  <DataContextMoniker Name="/RechargeGauntletDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ac4b221a-cf00-494a-9991-77815386332b" absoluteBounds="3.5, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/PhoneBook" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e12b0ee-59ce-4dc8-8e6c-c3fe25b19f0b" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0ba36a1-657b-4bc4-8444-42fa3bf042d1" absoluteBounds="3.5, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/Recharge" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ceeafa20-d338-4e29-9a9d-b92f771e7792" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e028b40f-064a-4f85-8e95-e5c97588c6a3" absoluteBounds="0.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/Request" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c18e93b4-49e1-49da-befa-505615426f3e" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b505eae-75b5-4c0c-ac1a-774f58c02e50" absoluteBounds="9.5, 0.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/SMSBank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecc196b1-0197-4eb9-a881-2e3758d06313" absoluteBounds="9.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="944be715-1ff0-40cb-bc53-ac6bf334ee8a" absoluteBounds="6.75, 1.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/SMSType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2c2247c-58c9-49e1-b000-e861611311ad" absoluteBounds="6.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f949efb4-5341-44b3-a1bf-3f1be950a160" absoluteBounds="0.75, 2.625, 2, 1.578595377604167">
+      <DataClassMoniker Name="/RechargeGauntletDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d785dc7-c70e-4f55-b4f7-95ba5e425830" absoluteBounds="0.765, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 1.84699625651042); (9.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RechargeGauntletDataContext/SMSType/SMSType_SMSBank" />
+      <nodes>
+        <classShapeMoniker Id="944be715-1ff0-40cb-bc53-ac6bf334ee8a" />
+        <classShapeMoniker Id="0b505eae-75b5-4c0c-ac1a-774f58c02e50" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.625); (1.75 : 1.8124995); (3.5 : 1.8124995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RechargeGauntletDataContext/User/User_PhoneBook" />
+      <nodes>
+        <classShapeMoniker Id="f949efb4-5341-44b3-a1bf-3f1be950a160" />
+        <classShapeMoniker Id="ac4b221a-cf00-494a-9991-77815386332b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.91429768880208); (3.5 : 3.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RechargeGauntletDataContext/User/User_Recharge" />
+      <nodes>
+        <classShapeMoniker Id="f949efb4-5341-44b3-a1bf-3f1be950a160" />
+        <classShapeMoniker Id="f0ba36a1-657b-4bc4-8444-42fa3bf042d1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
