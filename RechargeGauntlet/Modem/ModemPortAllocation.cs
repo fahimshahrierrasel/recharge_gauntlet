@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.Text.RegularExpressions;
 
 namespace RechargeGauntlet.Modem
 {
@@ -28,9 +29,9 @@ namespace RechargeGauntlet.Modem
                     Handshake = Handshake.RequestToSend
                 };
                 serialPort.DataReceived += PortOnReceivedData;
-                serialPort.Open();
                 try
                 {
+                    serialPort.Open();
                     serialPort.BaseStream.Flush();
                     serialPort.Write("AT+COPS?\r");
                     serialPort.BaseStream.Flush();
@@ -45,21 +46,16 @@ namespace RechargeGauntlet.Modem
         // SerialPort DataReceivedHandler it will filter ther operatort name from the out put of the AT Command
         private static void PortOnReceivedData(object sender, SerialDataReceivedEventArgs e)
         {
+            var operatorNameRegex = new Regex("\"([A-Za-z])+\"");
             SerialPort sp = (SerialPort) sender;
             try
             {
                 while (sp.BytesToRead > 0)
                 {
                     string message = sp.ReadExisting();
-                    if (!String.IsNullOrEmpty(message))
+                    if (Regex.IsMatch(message, @"OK"))
                     {
-                        int firstIndex = message.IndexOf('\"');
-                        int lastIndex = message.LastIndexOf('\"');
-
-                        int startIndex = firstIndex + 1;
-                        int length = lastIndex - firstIndex - 1;
-
-                        string operatorName = message.Substring(startIndex, length);
+                        string operatorName = operatorNameRegex.Match(message).Value.Replace("\"", string.Empty);
                         _operatorModemPorts.Add(new OperatorModemPort(operatorName, sp.PortName));
                     }
                 }

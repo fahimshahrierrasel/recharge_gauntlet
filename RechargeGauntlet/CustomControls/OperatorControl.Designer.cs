@@ -106,6 +106,7 @@
             this.Controls.Add(this.PictureSignalBar);
             this.Name = "OperatorControl";
             this.Size = new System.Drawing.Size(303, 126);
+            this.Load += new System.EventHandler(this.OperatorControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureSignalBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PirtureOperatorLogo)).EndInit();
             this.ResumeLayout(false);

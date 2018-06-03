@@ -40,13 +40,9 @@
             this.rdbPostpaid = new System.Windows.Forms.RadioButton();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.PBOperatorLogo = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.operatorControl3 = new RechargeGauntlet.CustomControls.OperatorControl();
-            this.operatorControl2 = new RechargeGauntlet.CustomControls.OperatorControl();
-            this.operatorControl1 = new RechargeGauntlet.CustomControls.OperatorControl();
+            this.PanelModemConnection = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNumber
@@ -207,43 +203,16 @@
             this.PBOperatorLogo.TabIndex = 15;
             this.PBOperatorLogo.TabStop = false;
             // 
-            // panel1
+            // PanelModemConnection
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PanelModemConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.operatorControl3);
-            this.panel1.Controls.Add(this.operatorControl2);
-            this.panel1.Controls.Add(this.operatorControl1);
-            this.panel1.Location = new System.Drawing.Point(12, 396);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(929, 147);
-            this.panel1.TabIndex = 17;
-            // 
-            // operatorControl3
-            // 
-            this.operatorControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.operatorControl3.Location = new System.Drawing.Point(622, 4);
-            this.operatorControl3.Name = "operatorControl3";
-            this.operatorControl3.Size = new System.Drawing.Size(303, 126);
-            this.operatorControl3.TabIndex = 2;
-            // 
-            // operatorControl2
-            // 
-            this.operatorControl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.operatorControl2.Location = new System.Drawing.Point(313, 4);
-            this.operatorControl2.Name = "operatorControl2";
-            this.operatorControl2.Size = new System.Drawing.Size(303, 126);
-            this.operatorControl2.TabIndex = 1;
-            // 
-            // operatorControl1
-            // 
-            this.operatorControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.operatorControl1.Location = new System.Drawing.Point(4, 4);
-            this.operatorControl1.Name = "operatorControl1";
-            this.operatorControl1.Size = new System.Drawing.Size(303, 126);
-            this.operatorControl1.TabIndex = 0;
+            this.PanelModemConnection.AutoScroll = true;
+            this.PanelModemConnection.Location = new System.Drawing.Point(12, 396);
+            this.PanelModemConnection.Name = "PanelModemConnection";
+            this.PanelModemConnection.Size = new System.Drawing.Size(929, 147);
+            this.PanelModemConnection.TabIndex = 17;
             // 
             // RechargeForm
             // 
@@ -251,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(953, 546);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelModemConnection);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.PBOperatorLogo);
             this.Controls.Add(this.rdbPostpaid);
@@ -267,9 +236,9 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "RechargeForm";
             this.Text = "Recharge";
+            this.Shown += new System.EventHandler(this.RechargeForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOperatorLogo)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,9 +258,6 @@
         private System.Windows.Forms.RadioButton rdbPostpaid;
         private System.Windows.Forms.PictureBox PBOperatorLogo;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.Panel panel1;
-        private CustomControls.OperatorControl operatorControl3;
-        private CustomControls.OperatorControl operatorControl2;
-        private CustomControls.OperatorControl operatorControl1;
+        private System.Windows.Forms.Panel PanelModemConnection;
     }
 }

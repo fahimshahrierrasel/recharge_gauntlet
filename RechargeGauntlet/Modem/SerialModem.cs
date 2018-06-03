@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
+using System.Linq;
 using System.Management;
 
 namespace RechargeGauntlet.Modem
 {
-    class SerialModem
+    internal class SerialModem
     {
 
         /// <summary>
@@ -13,18 +15,18 @@ namespace RechargeGauntlet.Modem
         /// <returns>List of all modem port name</returns>
         public static List<string> GetAllModemPorts()
         {
-            List<string> ports = new List<string>();
-            ports.AddRange(GetPOTSModem());
-            return ports;
+            var potsModem = _GetPOTSModem();
+            var allComPorts = _GetAllCOMPorts();
+            return allComPorts.Union(potsModem).ToList();
         }
 
         /// <summary>
         /// Get all the ports name of the Connected POTS Modem 
         /// </summary>
-        /// <returns></returns>
-        private static List<string> GetPOTSModem()
+        /// <returns>List of POTS modem Ports</returns>
+        private static List<string> _GetPOTSModem()
         {
-            List<string> portsList = new List<string>();
+            List<string> portList = new List<string>();
 
             ManagementObjectSearcher modemSearcher =
                 new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_POTSModem");
@@ -35,7 +37,7 @@ namespace RechargeGauntlet.Modem
                 {
                     if (mbo["Status"].Equals("OK"))
                     {
-                        portsList.Add(mbo["AttachedTo"].ToString());
+                        portList.Add(mbo["AttachedTo"].ToString());
                     }
                 }
             }
@@ -44,7 +46,18 @@ namespace RechargeGauntlet.Modem
                 Console.WriteLine(exception.Message);
             }
 
-            return portsList;
+            return portList;
+        }
+
+        /// <summary>
+        /// Get All the COM ports of the system
+        /// </summary>
+        /// <returns>List of Ports</returns>
+        private static List<string> _GetAllCOMPorts()
+        {
+            var allPorts = SerialPort.GetPortNames();
+
+            return allPorts.ToList();
         }
     }
 }

@@ -117,61 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="airtel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\airtel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="banglalink" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\banglalink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MNAirtel" xml:space="preserve">
-    <value>*121*7*3#</value>
-    <comment>Check Airtel Mobile Number</comment>
-  </data>
-  <data name="MNBanglalink" xml:space="preserve">
-    <value>*511#</value>
-    <comment>Check Banglalink Mobile Number</comment>
-  </data>
-  <data name="MNGrameenphone" xml:space="preserve">
-    <value>*2#</value>
-    <comment>Check Grameenphone Mobile Number</comment>
-  </data>
-  <data name="MNRobi" xml:space="preserve">
-    <value>*140*2*4#</value>
-    <comment>Check Robi Mobile Number</comment>
-  </data>
-  <data name="MNTeletalk" xml:space="preserve">
-    <value>*551#</value>
-    <comment>Check Teletalk Mobile Number</comment>
-  </data>
-  <data name="robi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\robi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sigbar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sigbar5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teletalk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teletalk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="ModemBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -91,6 +91,51 @@ namespace RechargeGauntlet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *121*7*3#.
+        /// </summary>
+        internal static string MNAirtel {
+            get {
+                return ResourceManager.GetString("MNAirtel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *511#.
+        /// </summary>
+        internal static string MNBanglalink {
+            get {
+                return ResourceManager.GetString("MNBanglalink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *2#.
+        /// </summary>
+        internal static string MNGrameenphone {
+            get {
+                return ResourceManager.GetString("MNGrameenphone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *140*2*4#.
+        /// </summary>
+        internal static string MNRobi {
+            get {
+                return ResourceManager.GetString("MNRobi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *551#.
+        /// </summary>
+        internal static string MNTeletalk {
+            get {
+                return ResourceManager.GetString("MNTeletalk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap robi {
