@@ -49,12 +49,16 @@ namespace RechargeGauntlet.ATCMD
                 case "teletalk":
                     rechargeCommand = RechargeCMD.TELETALK;
                     break;
+                case "banglalink":
+                    rechargeCommand = RechargeCMD.TELETALK;
+                    break;
             }
+
             if(!string.IsNullOrEmpty(rechargeCommand))
             {
-                rechargeCommand.Replace(RechargeCMD.NUM, mobileNumber);
-                rechargeCommand.Replace(RechargeCMD.TK, amount.ToString());
-                rechargeCommand.Replace(RechargeCMD.PIN, pin);
+                rechargeCommand = rechargeCommand.Replace(RechargeCMD.NUM, mobileNumber)
+                    .Replace(RechargeCMD.TK, amount.ToString())
+                    .Replace(RechargeCMD.PIN, pin);
             }
 
             return rechargeCommand;
