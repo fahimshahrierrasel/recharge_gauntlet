@@ -4,12 +4,13 @@ namespace RechargeGauntlet.ATCMD
 {
     public enum UssdType
     {
-        CheckNumber
+        CheckNumber,
+        Recharge
     }
     public static class Ussdcmd
     {
-        private static readonly Regex CheckNumberRegex = new Regex("USSD");
-        private const string CheckNumber = "AT+CUSD=1,\"USSD\",15\r";
+        private static readonly Regex UssdRegex = new Regex("USSD");
+        private const string UssdCmd = "AT+CUSD=1,\"USSD\",15\r";
 
         public static string PrepareCommand(string operatorName, UssdType ussdType)
         {
@@ -30,17 +31,28 @@ namespace RechargeGauntlet.ATCMD
             string numberCommand = null;
 
             if (operatorName == "airtel")
-                numberCommand = CheckNumberRegex.Replace(CheckNumber, Properties.Resources.MNAirtel);
+                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNAirtel);
             else if (operatorName == "banglalink")
-                numberCommand = CheckNumberRegex.Replace(CheckNumber, Properties.Resources.MNBanglalink);
+                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNBanglalink);
             else if (operatorName == "grameenphone")
-                numberCommand = CheckNumberRegex.Replace(CheckNumber, Properties.Resources.MNGrameenphone);
+                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNGrameenphone);
             else if (operatorName == "robi")
-                numberCommand = CheckNumberRegex.Replace(CheckNumber, Properties.Resources.MNRobi);
+                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNRobi);
             else if (operatorName == "teletalk")
-                numberCommand = CheckNumberRegex.Replace(CheckNumber, Properties.Resources.MNTeletalk);
+                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNTeletalk);
 
             return numberCommand;
+        }
+
+        private static string RechargeUssdString(string operatorName, string mobileNumber, double amount, string pin)
+        {
+            string rechargeUssd = null;
+            if(operatorName == "GrameenPhone")
+            {
+                rechargeUssd = RechargeCMD.GRAMEENPHONE;
+            }
+
+            return rechargeUssd;
         }
     }
 }

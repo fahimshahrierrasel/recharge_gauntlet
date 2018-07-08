@@ -153,5 +153,10 @@ namespace RechargeGauntlet.CustomControls
                 Console.WriteLine(e);
             }
         }
+
+        public void RechargeMoney(string mobileNumber, double amount, int times)
+        {
+
+        }
     }
 }

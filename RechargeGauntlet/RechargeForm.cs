@@ -29,21 +29,27 @@ namespace RechargeGauntlet
             var amountReg = new Regex("(^[1-9][0-9]+.?[0-9]{0,2})"); // support both decimal and non decimal number upto 2 decimal point
             var quantityReg = new Regex("^[1-9][0-9]*");
 
-            if (!amountReg.IsMatch(txtAmount.Text))
+            string rechargeAmount = txtAmount.Text;
+            string rechargeQuantity = txtQuantity.Text;
+            string mobileNumber = txtNumber.Text;
+
+            if (!amountReg.IsMatch(rechargeAmount))
             {
                 MessageBox.Show("Please Enter an valid amount!");
                 return;
             }
-            if (!quantityReg.IsMatch(txtQuantity.Text))
+            if (!quantityReg.IsMatch(rechargeQuantity))
             {
                 MessageBox.Show("Please Enter an valid quantity!");
                 return;
             }
-            if (!numberReg.IsMatch(txtNumber.Text))
+            if (!numberReg.IsMatch(mobileNumber))
             {
                 MessageBox.Show("Please Enter an valid Mobile Number!");
                 return;
             }
+
+            
         }
 
         private void InitializeModems()

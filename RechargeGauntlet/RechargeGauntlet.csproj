@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATCMD\RechargeCMD.cs" />
     <Compile Include="ATCMD\USSDCMD.cs" />
     <Compile Include="CustomControls\OperatorControl.cs">
       <SubType>UserControl</SubType>
