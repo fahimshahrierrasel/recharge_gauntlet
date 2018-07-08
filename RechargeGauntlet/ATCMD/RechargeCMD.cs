@@ -14,9 +14,13 @@
         * Teletalk
         * *250*Number*Tk*Pin#
         */
-        public const string TELETALK = "*250*NUM*TK*PIN#";
-        public const string AIRTEL = "*999*NUM*TK*PIN#";
-        public const string ROBI = "*999*NUM*TK*PIN#";
-        public const string GRAMEENPHONE = "*222*NUM*TK*0*PIN#";  
+        public const string NUM = "NUM";
+        public const string TK = "TK";
+        public const string PIN = "PIN";
+
+        public static string TELETALK = $"*250*{NUM}*{TK}*{PIN}#";
+        public static string AIRTEL = $"*999*{NUM}*{TK}*{PIN}#";
+        public static string ROBI = $"*999*{NUM}*{TK}*{PIN}#";
+        public static string GRAMEENPHONE = $"*222*{NUM}*{TK}*0*{PIN}#";  
     }
 }

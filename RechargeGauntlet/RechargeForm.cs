@@ -10,12 +10,15 @@ namespace RechargeGauntlet
     public partial class RechargeForm : Form
     {
         private List<OperatorModemInfo> _operatorModemInfos;
+        List<OperatorControl> operators;
+        private string operatorName;
 
         public RechargeForm(List<OperatorModemInfo> operatorModemInfos)
         {
             InitializeComponent();
             _operatorModemInfos = operatorModemInfos;
-            
+            operators = new List<OperatorControl>();
+
         }
 
         private void RechargeForm_Shown(object sender, EventArgs e)
@@ -49,7 +52,20 @@ namespace RechargeGauntlet
                 return;
             }
 
-            
+            if (!String.IsNullOrEmpty(operatorName))
+            {
+                foreach (OperatorControl oc in operators)
+                {
+                    if (oc.OperatorName.ToLower() == operatorName)
+                    {
+                        Console.WriteLine("Operator Found");
+                        oc.RechargeMoney(mobileNumber, double.Parse(rechargeAmount), 1);
+                    }
+
+                }
+            }
+
+            Console.WriteLine("Send Clicked");
         }
 
         private void InitializeModems()
@@ -62,10 +78,11 @@ namespace RechargeGauntlet
                 {
                     Visible = true,
                     Top = 0,
-                    Left = 0+width,
+                    Left = 0 + width,
                 };
                 width = operatorControl.Width + 5;
                 PanelModemConnection.Controls.Add(operatorControl);
+                operators.Add(operatorControl);
             }
         }
 
@@ -102,21 +119,27 @@ namespace RechargeGauntlet
             {
                 case "015":
                     PBOperatorLogo.Image = Properties.Resources.teletalk;
+                    operatorName = "teletalk";
                     break;
                 case "016":
                     PBOperatorLogo.Image = Properties.Resources.airtel;
+                    operatorName = "airtel";
                     break;
                 case "017":
                     PBOperatorLogo.Image = Properties.Resources.gp;
+                    operatorName = "grameenphone";
                     break;
                 case "018":
                     PBOperatorLogo.Image = Properties.Resources.robi;
+                    operatorName = "robi";
                     break;
                 case "019":
                     PBOperatorLogo.Image = Properties.Resources.banglalink;
+                    operatorName = "banglalink";
                     break;
                 default:
                     PBOperatorLogo.Image = null;
+                    operatorName = null;
                     break;
             }
         }
@@ -208,6 +231,6 @@ namespace RechargeGauntlet
             }
         }
 
-        
+
     }
 }

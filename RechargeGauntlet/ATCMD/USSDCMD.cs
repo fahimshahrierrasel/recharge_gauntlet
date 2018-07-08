@@ -2,57 +2,64 @@
 
 namespace RechargeGauntlet.ATCMD
 {
-    public enum UssdType
-    {
-        CheckNumber,
-        Recharge
-    }
     public static class Ussdcmd
     {
         private static readonly Regex UssdRegex = new Regex("USSD");
         private const string UssdCmd = "AT+CUSD=1,\"USSD\",15\r";
-
-        public static string PrepareCommand(string operatorName, UssdType ussdType)
-        {
-            string command = null;
-
-            switch (ussdType)
-            {
-                case UssdType.CheckNumber:
-                    command = MobileNumberCommand(operatorName);
-                    break;
-            }
-
-            return command;
-        }
-
-        private static string MobileNumberCommand(string operatorName)
+       
+        public static string MobileNumberCommand(string operatorName)
         {
             string numberCommand = null;
-
-            if (operatorName == "airtel")
-                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNAirtel);
-            else if (operatorName == "banglalink")
-                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNBanglalink);
-            else if (operatorName == "grameenphone")
-                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNGrameenphone);
-            else if (operatorName == "robi")
-                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNRobi);
-            else if (operatorName == "teletalk")
-                numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNTeletalk);
+            switch (operatorName.ToLower())
+            {
+                case "airtel":
+                    numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNAirtel);
+                    break;
+                case "banglalink":
+                    numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNBanglalink);
+                    break;
+                case "grameenphone":
+                    numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNGrameenphone);
+                    break;
+                case "robi":
+                    numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNRobi);
+                    break;
+                case "teletalk":
+                    numberCommand = UssdRegex.Replace(UssdCmd, Properties.Resources.MNTeletalk);
+                    break;
+            }
 
             return numberCommand;
         }
 
-        private static string RechargeUssdString(string operatorName, string mobileNumber, double amount, string pin)
+        public static string RechargeCommand(string operatorName, string mobileNumber, double amount, string pin)
         {
-            string rechargeUssd = null;
-            if(operatorName == "GrameenPhone")
+            string rechargeCommand = null;
+            switch (operatorName.ToLower())
             {
-                rechargeUssd = RechargeCMD.GRAMEENPHONE;
+                case "grameenphone":
+                    rechargeCommand = RechargeCMD.GRAMEENPHONE;
+                    break;
+                case "robi":
+                    rechargeCommand = RechargeCMD.ROBI;
+                    break;
+                case "airtel":
+                    rechargeCommand = RechargeCMD.AIRTEL;
+                    break;
+                case "teletalk":
+                    rechargeCommand = RechargeCMD.TELETALK;
+                    break;
+            }
+            if(!string.IsNullOrEmpty(rechargeCommand))
+            {
+                rechargeCommand.Replace(RechargeCMD.NUM, mobileNumber);
+                rechargeCommand.Replace(RechargeCMD.TK, amount.ToString());
+                rechargeCommand.Replace(RechargeCMD.PIN, pin);
             }
 
-            return rechargeUssd;
+            return rechargeCommand;
         }
+
+
     }
 }

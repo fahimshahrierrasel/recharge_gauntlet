@@ -50,7 +50,7 @@ namespace RechargeGauntlet.CustomUI
                 try
                 {
                     serialPort.Open();
-                    var command = Ussdcmd.PrepareCommand(omp.OperatorName.ToLower(), UssdType.CheckNumber);
+                    var command = Ussdcmd.MobileNumberCommand(omp.OperatorName);
 
                     serialPort.Write(command);
 
