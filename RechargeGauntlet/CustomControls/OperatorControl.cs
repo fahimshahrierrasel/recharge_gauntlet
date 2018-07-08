@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RechargeGauntlet.ATCMD;
+using System;
 using System.IO.Ports;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace RechargeGauntlet.CustomControls
     {
         private SerialPort _serialPort;
         private readonly string _portNumber;
+        public string OperatorName { get; }
         private readonly string _operatorName;
         private readonly string _mobileNumber;
 
@@ -17,6 +19,7 @@ namespace RechargeGauntlet.CustomControls
             _portNumber = portNumber;
             _operatorName = operatorName;
             _mobileNumber = mobileNumber;
+            OperatorName = operatorName;
             InitializeComponent();
         }
 
@@ -83,7 +86,7 @@ namespace RechargeGauntlet.CustomControls
              * -85 >= strength > -70 is 3 bar
              * -70 >= strength > -60 is 4 bar
              * -60 >= strength is 5 bar
-            */ 
+            */
             var actulResult = Regex.Replace(message, @"\+|AT|ZRSSI|:|OK|\s+", string.Empty);
             string[] results = actulResult.Split(',');
             var networkStrength = 120;
@@ -152,6 +155,11 @@ namespace RechargeGauntlet.CustomControls
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public void RechargeMoney(string mobileNumber, double amount, int times)
+        {
+            Console.WriteLine( Ussdcmd.RechargeCommand(_operatorName, mobileNumber, amount, "1234"));
         }
     }
 }
