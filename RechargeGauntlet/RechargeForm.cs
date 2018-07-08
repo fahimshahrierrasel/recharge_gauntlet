@@ -138,7 +138,7 @@ namespace RechargeGauntlet
                     operatorName = "banglalink";
                     break;
                 default:
-                    PBOperatorLogo.Image = null;
+                    PBOperatorLogo.Image = Properties.Resources.dialpad;
                     operatorName = null;
                     break;
             }
